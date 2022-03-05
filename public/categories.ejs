@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoping</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <script src="js/bootstrap.bundle.js"></script>
+</head>
+
+<body>
+    <!--star navbar-->
+    <div class=" position-sticky top-0" style="z-index: 100;">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+                    aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand text-white fs-2 en" href="/products">ForYou</a>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link text-white en" href="/products">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white en" href="/products/categories">Categories</a>
+                        </li>
+                    </ul>
+                    <div>
+                        <div class="nav-link text-white" id="ar-btn"><i class="fa fa-language fs-3" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <a class="nav-link text-white en" href="login.html">Login</a>
+                        <a class="nav-link text-white en" href="register.html">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    
+        <!-- Search Bar -->
+        <div class="container-fulid position-sticky bg-light px-5 pb-3 pt-4 shadow" id="search">
+            <div class="container-lg">
+                <form action="/products/search">
+                    <div class="input-group">
+                        <label class="input-group-text" for="inputGroupSelect01">Product Search:</label>
+                        <input name="q" id="search-input" type="search" class="form-control w-50" placeholder="Search...">
+                        <button id="search-button" type="button" class="btn btn-success px-5">Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--container-->
+    <div class="container my-5">
+        <h2 class="text-center">
+            Categories
+        </h2>
+        <div class="row justify-content-center">
+            <% for( let index=0; index < products.length; index++ ) { %>
+                <a href="/products/category/<%= products[index] %> " class="btn btn-outline-primary col-3 m-2"><%= products[index] %></a>
+                <% } %>
+        </div>
+    </div>
+</body>
+
+</html>
